@@ -16,5 +16,16 @@
   "bugs": {
     "url": "https://github.com/Shayaanakbar/webauth-iii-challenge/issues"
   },
-  "homepage": "https://github.com/Shayaanakbar/webauth-iii-challenge#readme"
+  "homepage": "https://github.com/Shayaanakbar/webauth-iii-challenge#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "helmet": "^3.18.0",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.17.5",
+    "nodemon": "^1.19.1",
+    "sqlite3": "^4.0.8"
+  }
 }
