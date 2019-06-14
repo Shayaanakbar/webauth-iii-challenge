@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, NavLink, withRouter } from 'react-router-dom';
+import { Route, NavLink, } from 'react-router-dom';
 import Login from './Login';
 import Users from './Users';
 import SignUp from './Signup';

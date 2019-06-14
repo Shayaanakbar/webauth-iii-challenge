@@ -1,11 +1,50 @@
-import React from 'react'
+import React from 'react';
+import { withRouter } from 'react-router-dom';
+import api from './helpers/api';
 
-class Login extends React.Component {
-    render() {
-        return (
-            <h3>Login</h3>
-        )
+class Login extends  React.Component {
+  state = {
+    username: '',
+    password: '',
+  }
+
+  handleSubmit = async (evt) => {
+    evt.preventDefault();
+
+    try {
+      const { username, password } = this.state
+
+      const result = await api.post('/auth/login', {
+        username,
+        password,
+      })
+
+      localStorage.setItem('token', result.data.token);
+      this.props.history.push('/users');
+    } catch (err) {
+      console.error(err);
     }
+  }
+
+  handleChange = (evt) => {
+    this.setState({
+      [evt.target.name]: evt.target.value,
+    })
+  }
+
+  render() {
+    return (
+      <div>
+        <h3>Login</h3>
+
+        <form onSubmit={this.handleSubmit}>
+          <input type="text" name="username" placeholder="Username" onChange={this.handleChange} value={this.state.username} />
+          <input type="password" name="password" placeholder="Password"  onChange={this.handleChange} value={this.state.password} />
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    )
+  }
 }
 
-export default Login 
+export default withRouter(Login)
