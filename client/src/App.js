@@ -21,7 +21,7 @@ class App extends React.Component {
         <li><NavLink to="/login">Login</NavLink></li>
         <li><NavLink to="/Signup">SignUp</NavLink></li>
         <li><NavLink to="/Users">Users</NavLink></li>
-        <li><button onClick={this.logout}>Logout</button></li>
+        <li><button onClick={this.logout}>Sign Out</button></li>
       </ul>
 
       <main>
