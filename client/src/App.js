@@ -1,15 +1,15 @@
 import React from 'react';
-import { Route, NavLink, } from 'react-router-dom';
+import { Route, NavLink, withRouter } from 'react-router-dom';
 import Login from './Login';
 import Users from './Users';
 import SignUp from './Signup';
 
 
 class App extends React.Component {
-    logout = () => {
-      localStorage.removeItem('token');
-      this.props.history.push('/login');
-    }
+  logout = () => {
+    localStorage.removeItem('token')
+    this.props.history.push('/login')
+  }
 
 
     render () {
@@ -21,7 +21,7 @@ class App extends React.Component {
         <li><NavLink to="/login">Login</NavLink></li>
         <li><NavLink to="/Signup">SignUp</NavLink></li>
         <li><NavLink to="/Users">Users</NavLink></li>
-        <li><button onClick={this.logout}>logout</button></li>
+        <li><button onClick={this.logout}>Logout</button></li>
       </ul>
 
       <main>
@@ -34,4 +34,4 @@ class App extends React.Component {
   }
 }
 
-export default App
+export default withRouter(App);
