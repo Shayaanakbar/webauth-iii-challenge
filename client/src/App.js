@@ -6,6 +6,12 @@ import SignUp from './Signup';
 
 
 class App extends React.Component {
+    logout = () => {
+      localStorage.removeItem('token');
+      this.props.history.push('/login');
+    }
+
+
     render () {
       return (
       <div>
@@ -15,6 +21,7 @@ class App extends React.Component {
         <li><NavLink to="/login">Login</NavLink></li>
         <li><NavLink to="/Signup">SignUp</NavLink></li>
         <li><NavLink to="/Users">Users</NavLink></li>
+        <li><button onClick={this.logout}>logout</button></li>
       </ul>
 
       <main>

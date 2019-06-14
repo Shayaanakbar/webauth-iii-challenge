@@ -16,7 +16,7 @@ class Signup extends React.Component {
       const { department, username, password } = this.state
 
       const result = await api.post('/auth/register', {
-        fullname: department,
+          department,
         username,
         password,
       })
